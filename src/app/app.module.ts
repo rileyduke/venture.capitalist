@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavSidebarComponent } from './nav-sidebar/nav-sidebar.component';
-import { UpgradesComponent } from './upgrade/upgrades/upgrades.component';
-import { GameComponent } from './top/game/game.component';
+import { NavSidebarComponent } from './view/layout/nav-sidebar/nav-sidebar.component';
+import { UpgradesComponent } from './view/upgrade/upgrades/upgrades.component';
+import { GameComponent } from './view/top/game/game.component';
 
 @NgModule({
    declarations: [
