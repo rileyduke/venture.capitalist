@@ -1,1 +1,9 @@
-<p>game works!</p>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1>game</h1>
+</div>
+{{ player | json }}
+<ul *ngFor='let business of player.businesses'>
+  <li>{{ business.businessName }}</li>
+</ul>
+<app-run-business></app-run-business>
