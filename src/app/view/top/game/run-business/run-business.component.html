@@ -1,3 +1,5 @@
-<p>
-  run-business works!
-</p>
+<div class="input-group" style="margin: 20px;">
+  <button class="btn btn-primary" (click)="runBusiness()">go</button>
+
+  <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': progress}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>

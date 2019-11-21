@@ -9,5 +9,14 @@ export const BUSINESSES: Business[]  = [
     isManaged: false,
     managerCost: 1,
     businessName: 'Ice Cream Shop'
+  },
+  {
+    castTime: 1,
+    baseIncome: 1,
+    buffedIncome: 1,
+    instanceCount: 1,
+    isManaged: false,
+    managerCost: 1,
+    businessName: 'Laundromat'
   }
 ];
