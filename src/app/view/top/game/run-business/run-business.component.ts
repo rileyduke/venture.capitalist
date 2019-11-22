@@ -29,7 +29,7 @@ export class RunBusinessComponent implements OnInit {
     if(!this.isRunning){
       this.progress = 0
       this.isRunning = true
-      const subscribe = this.source.subscribe(val => {
+      let timerId = setInterval(() => {
         if(this.isRunning){
           this.progress += CONSTANTS.tickValue
           this.progressPercent = 100*(this.progress / CONSTANTS.progressMax)
@@ -38,12 +38,13 @@ export class RunBusinessComponent implements OnInit {
             this.isRunning = false
             this.progress = 0
             this.progressPercent = 0
+            clearInterval(timerId)
           }
           
           console.log(this.progress)
         }
 
-      });
+      },CONSTANTS.timerTick);
     }
   }
 
