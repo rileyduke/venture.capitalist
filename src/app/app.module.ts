@@ -11,6 +11,7 @@ import { UpgradesComponent } from './view/upgrade/upgrades/upgrades.component';
 import { RunBusinessComponent } from './view/top/game/run-business/run-business.component';
 import { GameComponent } from './view/top/game/game.component';
 import { PlayerStatsComponent } from './view/top/game/player-stats/player-stats.component';
+import { NavMenuItemsComponent } from './view/layout/nav-menu-items/nav-menu-items.component';
 
 @NgModule({
    declarations: [
@@ -20,7 +21,8 @@ import { PlayerStatsComponent } from './view/top/game/player-stats/player-stats.
       UpgradesComponent,
       GameComponent,
       RunBusinessComponent,
-      PlayerStatsComponent
+      PlayerStatsComponent,
+      NavMenuItemsComponent
    ],
    imports: [
       BrowserModule,
