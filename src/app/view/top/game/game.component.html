@@ -5,6 +5,6 @@
 <app-player-stats [player]="player"></app-player-stats>
 
 <div *ngFor='let business of player.businesses'>
-  <app-run-business [business]='business'></app-run-business>
+  <app-run-business [business]='business' [player]='player'></app-run-business>
 </div>
 

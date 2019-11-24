@@ -12,6 +12,7 @@ import { RunBusinessComponent } from './view/top/game/run-business/run-business.
 import { GameComponent } from './view/top/game/game.component';
 import { PlayerStatsComponent } from './view/top/game/player-stats/player-stats.component';
 import { NavMenuItemsComponent } from './view/layout/nav-menu-items/nav-menu-items.component';
+import { BusinessStatsComponent } from './view/top/game/business-stats/business-stats.component';
 
 @NgModule({
    declarations: [
@@ -22,7 +23,8 @@ import { NavMenuItemsComponent } from './view/layout/nav-menu-items/nav-menu-ite
       GameComponent,
       RunBusinessComponent,
       PlayerStatsComponent,
-      NavMenuItemsComponent
+      NavMenuItemsComponent,
+      BusinessStatsComponent
    ],
    imports: [
       BrowserModule,

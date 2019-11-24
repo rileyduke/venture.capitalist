@@ -1,28 +1,8 @@
 import { Player } from 'src/app/model/player';
-
+import { BUSINESSES } from 'src/app/data/business/mock/mock-business';
 // mock data
 export const PLAYER: Player = {
-  businesses: [
-    {
-      castTime: 1,
-      baseIncome: 1,
-      buffedIncome: 1,
-      instanceCount: 1,
-      isManaged: false,
-      managerCost: 1,
-      businessName: 'Ice Cream Shop'
-    },
-    {
-      castTime: 1,
-      baseIncome: 1,
-      buffedIncome: 1,
-      instanceCount: 1,
-      isManaged: false,
-      managerCost: 1,
-      businessName: 'Laundromat'
-    }
-  ],
-
+  businesses: BUSINESSES,
   playerName: 'Riley',
   money: 0
-}
+};

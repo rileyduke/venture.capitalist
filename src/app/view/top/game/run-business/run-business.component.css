@@ -1,0 +1,32 @@
+.run-business-container{
+  border: 1px solid gainsboro;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 20px;
+  margin-left: 0px;
+}
+
+.right-row {
+  height: 40px;
+}
+.left-row {
+  height: 80px;
+  text-align: right;
+}
+.left-row button {
+  height: 85px;
+  width: 85px;
+  border-radius: 40px;
+}
+
+.right-row button {
+  height: 100%;
+  margin-right: 15px;
+}
+.right-row > .progress-bar {
+  border-radius: 10px;
+}
+
+.run-business {
+  margin-bottom: 20px;
+}
