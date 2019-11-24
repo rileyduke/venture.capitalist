@@ -9,7 +9,8 @@ export const BUSINESSES: Business[]  = [
     false, // isManaged
     1, // managerCost
     'Ice Cream Shop', // businessName
-    1 // baseBusinessCost
+    1, // baseBusinessCost
+    0 // progress
   ),
   new Business(
     1,
@@ -19,7 +20,8 @@ export const BUSINESSES: Business[]  = [
     false,
     1,
     'Laundromat',
-    50
+    50,
+    0
   ),
   new Business(
     1,
@@ -29,7 +31,8 @@ export const BUSINESSES: Business[]  = [
     false,
     1,
     'Carwash',
-    250
+    250,
+    0
   ),
   new Business(
     1,
@@ -39,6 +42,7 @@ export const BUSINESSES: Business[]  = [
     false,
     1,
     'Restaurant',
-    500
+    500,
+    0
   )
 ];

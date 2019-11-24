@@ -18,7 +18,9 @@ export class Business {
     public businessName: string,
 
     // initial cost of the business
-    public baseBusinessCost: number
+    public baseBusinessCost: number,
+    // progress
+    public progress: number
   ) { }
 
   // decision maker as to if you can use a business:

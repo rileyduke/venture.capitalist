@@ -17,56 +17,77 @@ export class RunBusinessComponent implements OnInit {
   // global player
   @Input() player: Player
 
-  public progress: number
+  // percentage calc for display
   public progressPercent: number
+  // running bool
   public isRunning: boolean
+
+  // run timer for the castbar
+  // this ticks no matter what, even if the business isn't running
+  // TODO: create this object only when first business is created
+  private timerId: any
+
   constructor() {
-    this.progress = CONSTANTS.progressMin
+    // this.business.progress = CONSTANTS.progressMin
     this.isRunning = false
   }
 
-  // start counting down the castbar
-  private timerId = setInterval(() => {
-    if (this.isRunning) {
-      this.progress += CONSTANTS.tickValue
-      this.progressPercent = 100 * (this.progress / CONSTANTS.progressMax)
-
-      if (this.progress >= CONSTANTS.progressMax) {
-        // reset the cast object
-        this.progress = CONSTANTS.progressMin
-        this.progressPercent = 0
-
-        // if not managed, stop running
-        if (!this.business.isManaged) {
-          this.isRunning = false
-        }
-
-        // score business
-        this.player.money += this.business.getIncome()
-      }
+  ngOnInit() {
+    if (this.business.isManaged) {
+      this.runBusiness()
     }
 
-  }, CONSTANTS.timerTick);
-
-  ngOnInit() {
-
+    if (this.business.instanceCount >= 0) {
+      this.initTimer()
+    }
   }
 
   // business castbar
   // runs the business and scores it once it meets its desired castpoint
   runBusiness(): void {
     if (!this.isRunning) {
-      this.progress = 0
+      this.business.progress = 0
       this.isRunning = true
     }
   }
 
   buyBusiness(): void {
+    // initiate the timer (wasn't counting until first one bought)
+    if (this.business.instanceCount === 0) {
+      this.initTimer()
+    }
+    // purchase the business with this player
     this.business.purchaseBusiness(this.player)
   }
 
   buyBusinessManager(): void {
     this.business.puchaseManager(this.player)
+    this.runBusiness()
+  }
+
+  initTimer(): void {
+    // start counting down the castbar
+    this.timerId = setInterval(() => {
+      if (this.isRunning) {
+        this.business.progress += CONSTANTS.tickValue
+        this.progressPercent = 100 * (this.business.progress / CONSTANTS.progressMax)
+
+        if (this.business.progress >= CONSTANTS.progressMax) {
+          // reset the cast object
+          this.business.progress = CONSTANTS.progressMin
+          this.progressPercent = 0
+
+          // if not managed, stop running
+          if (!this.business.isManaged) {
+            this.isRunning = false
+          }
+
+          // score business
+          this.player.money += this.business.getIncome()
+        }
+      }
+
+    }, CONSTANTS.timerTick);
   }
 
 }

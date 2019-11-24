@@ -1,2 +1,17 @@
-<p>player-stats works!</p>
-${{ player.money }}
+<div class="player-stats">
+  <div class="row">
+    <div class="col-2 left-row pull-right">
+      <h2>{{ player.playerName }}</h2>
+    </div>
+    <div class="col-10">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 left-row pull-right">
+      <h3>Money:</h3>
+    </div>
+    <div class="col-10">
+      <h3>${{ player.money }}</h3>
+    </div>
+  </div>
+</div>
