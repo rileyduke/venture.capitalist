@@ -37,7 +37,7 @@ export class RunBusinessComponent implements OnInit {
       this.runBusiness()
     }
 
-    if (this.business.instanceCount >= 0) {
+    if (this.business.instanceCount > 0) {
       this.initTimer()
     }
   }

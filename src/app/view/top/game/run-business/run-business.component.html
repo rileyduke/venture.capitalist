@@ -16,7 +16,7 @@
         aria-valuemax="100"></div>
     </div>
     <div class="row right-row">
-      <button class="btn btn-primary" (click)="buyBusiness()" [disabled]="business.getInstanceCost() > player.money || !business.isUsable()">Buy <span class="badge badge-light">${{business.getInstanceCost()}}</span></button>
+      <button class="btn btn-primary" (click)="buyBusiness()" [disabled]="business.getInstanceCost() > player.money">Buy <span class="badge badge-light">${{business.getInstanceCost()}}</span></button>
       <button type="button" class="btn btn-info" disabled>Count <span class="badge badge-light">{{business.instanceCount}}</span></button>
       <button class="btn btn-primary" (click)="buyBusinessManager()" [disabled]="(business.managerCost > player.money) || business.isManaged || !business.isUsable()">Purchase Manager <span class="badge badge-light">${{business.managerCost}}</span></button>
     </div>
