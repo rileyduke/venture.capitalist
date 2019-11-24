@@ -1,4 +1,26 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <h1>buy upgrades</h1>
 </div>
-<p>upgrades works!</p>
+<app-player-stats [player]=player></app-player-stats>
+
+<div *ngFor='let business of player.businesses'>
+
+  <div class="col-3">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{business.businessName}}</h5>
+        <p class="card-text">Increase profits of {{ business.businessName }} by 3X.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <button
+            class="btn btn-primary"
+            [disabled]="business.upgradeCost() > player.money"
+            (click)="business.purchaseUpgrade(player)">
+            buy
+            <span class="badge badge-light">${{business.upgradeCost()}}</span>
+          </button>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -33,13 +33,19 @@ export class RunBusinessComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.business.lastStarted, this.business.lastScored)
     if (this.business.isManaged || this.business.isRunning) {
       this.business.isRunning = true
     }
 
     if (this.business.instanceCount > 0) {
       this.initTimer()
+    }
+  }
+
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngOnDestroy() {
+    if (this.timerId) {
+      clearInterval(this.timerId)
     }
   }
 

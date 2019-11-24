@@ -84,6 +84,8 @@ export class Business {
     if (player.money >= this.baseBusinessCost) {
       player.money -= this.getInstanceCost()
       this.instanceCount++
+      this.storeBusiness()
+      player.storePlayer()
     }
   }
 
@@ -96,6 +98,21 @@ export class Business {
 
     if (this.isRunning) {
       this.storeBusiness()
+    }
+  }
+
+  // UPGRADES
+  public upgradeCost(): number {
+    return 100 * this.baseBusinessCost
+  }
+
+  // purchase the upgrade
+  public purchaseUpgrade(player: Player): void {
+    if (player.money >= this.upgradeCost()) {
+      player.money -= this.upgradeCost()
+      this.buffedIncome += 1
+      this.storeBusiness()
+      player.storePlayer()
     }
   }
 }

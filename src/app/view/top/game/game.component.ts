@@ -13,7 +13,9 @@ export class GameComponent implements OnInit {
   constructor(private playerService: PlayerService) { }
 
   ngOnInit() {
-    this.getPlayer();
+    if (!this.player) {
+      this.getPlayer();
+    }
   }
 
   getPlayer(): void {
