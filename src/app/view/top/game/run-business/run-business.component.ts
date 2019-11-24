@@ -29,12 +29,13 @@ export class RunBusinessComponent implements OnInit {
 
   constructor() {
     // this.business.progress = CONSTANTS.progressMin
-    this.isRunning = false
+    // this.isRunning = false
   }
 
   ngOnInit() {
-    if (this.business.isManaged) {
-      this.runBusiness()
+    console.log(this.business.lastStarted, this.business.lastScored)
+    if (this.business.isManaged || this.business.isRunning) {
+      this.business.isRunning = true
     }
 
     if (this.business.instanceCount > 0) {
@@ -45,9 +46,11 @@ export class RunBusinessComponent implements OnInit {
   // business castbar
   // runs the business and scores it once it meets its desired castpoint
   runBusiness(): void {
-    if (!this.isRunning) {
-      this.business.progress = 0
-      this.isRunning = true
+    if (!this.business.isRunning) {
+      this.business.lastStarted = Date.now()
+      this.business.lastScored = Date.now()
+      this.business.isRunning = true
+      this.business.storeBusiness()
     }
   }
 
@@ -68,22 +71,20 @@ export class RunBusinessComponent implements OnInit {
   initTimer(): void {
     // start counting down the castbar
     this.timerId = setInterval(() => {
-      if (this.isRunning) {
-        this.business.progress += CONSTANTS.tickValue
-        this.progressPercent = 100 * (this.business.progress / CONSTANTS.progressMax)
+      if (this.business.isRunning) {
+        this.progressPercent = this.business.getPercentageDone() // 100 * (this.business.progress / CONSTANTS.progressMax)
 
-        if (this.business.progress >= CONSTANTS.progressMax) {
-          // reset the cast object
-          this.business.progress = CONSTANTS.progressMin
+        if (this.progressPercent >= 100) {
           this.progressPercent = 0
 
           // if not managed, stop running
           if (!this.business.isManaged) {
-            this.isRunning = false
+            this.business.isRunning = false
           }
 
           // score business
-          this.player.money += this.business.getIncome()
+          // this.player.money += this.business.getIncome()
+          this.business.scoreBusiness(this.player)
         }
       }
 

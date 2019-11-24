@@ -10,7 +10,7 @@ export const BUSINESSES: Business[]  = [
     1, // managerCost
     'Ice Cream Shop', // businessName
     1, // baseBusinessCost
-    0 // progress
+    0, 0, 0, false // progress
   ),
   new Business(
     1,
@@ -21,7 +21,10 @@ export const BUSINESSES: Business[]  = [
     1,
     'Laundromat',
     50,
-    0
+    0,
+    0,
+    0,
+    false
   ),
   new Business(
     1,
@@ -32,7 +35,10 @@ export const BUSINESSES: Business[]  = [
     1,
     'Carwash',
     250,
-    0
+    0,
+    0,
+    0,
+    false
   ),
   new Business(
     1,
@@ -43,6 +49,9 @@ export const BUSINESSES: Business[]  = [
     1,
     'Restaurant',
     500,
-    0
+    0,
+    0,
+    0,
+    false
   )
 ];

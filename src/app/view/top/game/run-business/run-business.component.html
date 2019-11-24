@@ -1,17 +1,25 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-10">
+    <h3>{{ business.businessName }}</h3>
+  </div>
+
+</div>
 <div class="row run-business {{business.isUsable()}}">
+
   <div class="col-2 left-row">
     <button
       class="btn btn-primary"
-      [disabled]="!business.isUsable()"
-      (click)="runBusiness()">run</button>
+      [disabled]="!business.isUsable() || business.isManaged || business.isRunning"
+      (click)="runBusiness()">{{ business.isManaged ? '∞' : 'run' }}</button>
   </div>
   <div class="col-10">
     <div class="row right-row">
       <div
-        class="progress-bar bg-success"
+        class="progress-bar bg-success notransition"
         role="progressbar"
         [style.width]="progressPercent +'%'"
-        [hidden]="!isRunning"
+        [hidden]="!business.isRunning"
         aria-valuemin="0"
         aria-valuemax="100"></div>
     </div>

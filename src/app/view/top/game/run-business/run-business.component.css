@@ -30,3 +30,10 @@
 .run-business {
   margin-bottom: 20px;
 }
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}

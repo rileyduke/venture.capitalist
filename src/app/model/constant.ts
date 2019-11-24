@@ -1,6 +1,6 @@
 export const CONSTANTS = {
     // timer values
-    timerTick : 200, // tick every 500ms
+    timerTick : 50, // tick every 500ms
     tickValue : 50,
 
     // progress values
