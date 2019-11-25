@@ -23,4 +23,11 @@ export class GameComponent implements OnInit {
       .subscribe(player => this.player = player);
   }
 
+  reset(): void {
+    Object.keys(localStorage).forEach(key => {
+      localStorage.removeItem(key)
+    })
+    location.reload()
+  }
+
 }

@@ -37,3 +37,16 @@
   -o-transition: none !important;
   transition: none !important;
 }
+
+
+.list-group-item {
+  padding: 0px;
+  text-align: center;
+}
+
+.btn-group {
+  width: 100%;
+}
+.false .card-header {
+  color: #adb5bd
+}

@@ -48,9 +48,9 @@ export class Business {
   public getPercentageDone(): number {
     const now = Date.now()
     if (this.isManaged) {
-      return 100 * ((now - this.lastScored) / this.castTime)
+      return 100 * ((now - this.lastScored) / this.getCastTime())
     } else {
-      return 100 * ((now - this.lastStarted) / this.castTime)
+      return 100 * ((now - this.lastStarted) / this.getCastTime())
     }
   }
 
@@ -113,5 +113,13 @@ export class Business {
       this.storeBusiness()
       player.storePlayer()
     }
+  }
+
+  // casttime gets 1% faster every business purchased?
+  // minimum speed is 250ms
+  public getCastTime(): number {
+    let ct = this.castTime * (1 - (this.instanceCount / 100))
+
+    return ct <= 250 ? 250 : ct
   }
 }

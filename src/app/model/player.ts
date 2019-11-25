@@ -16,7 +16,7 @@ export class Player {
       if (business.isManaged) {
         const now = Date.now()
         const timePassed = now - business.lastScored
-        const numberOfTimesToScore = Math.floor(timePassed / business.castTime)
+        const numberOfTimesToScore = Math.floor(timePassed / business.getCastTime())
         if (numberOfTimesToScore > 0) {
           business.scoreBusiness(this, numberOfTimesToScore)
         }
@@ -25,7 +25,7 @@ export class Player {
       } else if (business.isRunning) {
         const now = Date.now()
         const timePassed = now - business.lastStarted
-        const numberOfTimesToScore = Math.floor(timePassed / business.castTime)
+        const numberOfTimesToScore = Math.floor(timePassed / business.getCastTime())
         if (numberOfTimesToScore > 0) {
           business.isRunning = false
           business.scoreBusiness(this)
