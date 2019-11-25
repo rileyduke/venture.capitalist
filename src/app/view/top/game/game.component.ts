@@ -24,10 +24,16 @@ export class GameComponent implements OnInit {
   }
 
   reset(): void {
-    Object.keys(localStorage).forEach(key => {
-      localStorage.removeItem(key)
-    })
-    location.reload()
+    this.player.businesses.forEach(business => {
+      business.isManaged = false
+      business.isRunning = false
+    });
+    setTimeout(() => {
+      Object.keys(localStorage).forEach(key => {
+        localStorage.removeItem(key)
+      })
+      location.reload()
+    }, 150);
   }
 
 }

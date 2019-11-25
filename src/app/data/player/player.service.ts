@@ -24,6 +24,8 @@ export class PlayerService {
       player = new Player([], tempPlayer.money, tempPlayer.playerName)
     } else {
       player = new Player(PlayerJson.businesses, PlayerJson.money, PlayerJson.playerName)
+      const person = prompt('Please enter your name', 'Riley')
+      player.playerName = person
     }
 
     // populate with businesses from localstorage or json
@@ -35,7 +37,11 @@ export class PlayerService {
       player = PLAYER
     }
 
+    // get anything that happened offline
     player.pickupOfflineFunds()
+
+    // store
+    player.storePlayer()
 
     // return observable
     return of(player);
