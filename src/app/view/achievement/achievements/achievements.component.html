@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1>{{ player.playerName }}'s Achievements</h1>
+</div>
+
+<div class="row">
+  <div *ngFor='let achievement of achievements' class="col-lg">
+    <div class="card {{ achievement.isAchieved() ? 'bg-primary' : 'bg-light' }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ achievement.achievementName }}</h5>
+        <p class="card-text">{{ achievement.getDescription() }}</p>
+        <span *ngIf='!achievement.isAchieved()' class="badge badge-secondary">{{ achievement.achievementProgress() }}</span>
+      </div>
+    </div>
+  </div>
+</div>

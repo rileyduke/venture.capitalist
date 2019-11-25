@@ -29,7 +29,7 @@
     },
     {
         "castTime" : 100000,
-        "baseIncome" : 1,
+        "baseIncome" : 1000,
         "buffedIncome" : 1,
         "instanceCount" : 0,
         "isManaged" : false,

@@ -18,6 +18,7 @@ The project scope was limited to the following functions:
 - Make money from a business
 - Hire managers (automatically make money from a business)
 - Money from idle time (while the window is closed) is calculated and earned
+- Mockup of some achievements
 
 ### Focus
 
@@ -35,8 +36,6 @@ All data is stored in `LocalStorage` in the browser as JSON strings. Timestamps 
 Seed data is stored in the `src/static/json` folder. On the first run of the game, or any run where the data in the seed file does not exist in `LocalStorage`, seed data is retreived and stored in `LocalStorage`.
 
 ## Architecture
-
-Reasoning behind technical choices
 
 ### Angular
 
@@ -60,4 +59,4 @@ Currently, a savvy user could just edit the `LocalStorage` JSON data and increas
 
 ### Multiple Browsers
 
-Although the business scoring is timestamp based, there is a chance that two browser windows opened simultaneously could cause the business to "double score". This may be solved by awarding a single (first opened) window the master title and only allowing it to score the business.
+Although the business scoring is timestamp based, there is a chance that two browser windows opened simultaneously could cause the business to "double score". This may be solved by awarding a single (first opened) window the master title and only allowing it to score the business. I have not yet produced this error so for now it is just something to look out for.

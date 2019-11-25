@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UpgradesComponent } from './view/upgrade/upgrades/upgrades.component';
 import { GameComponent } from './view/top/game/game.component';
+import { AchievementsComponent } from './view/achievement/achievements/achievements.component';
 
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: '',
     redirectTo: '/game',
     pathMatch: 'full'
-  }
+  },
+  { path: 'achievements', component: AchievementsComponent }
 ];
 
 @NgModule({

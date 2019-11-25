@@ -27,6 +27,7 @@ export class Player {
         const timePassed = now - business.lastStarted
         const numberOfTimesToScore = Math.floor(timePassed / business.castTime)
         if (numberOfTimesToScore > 0) {
+          business.isRunning = false
           business.scoreBusiness(this)
         }
       }
