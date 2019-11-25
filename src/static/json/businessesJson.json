@@ -1,0 +1,58 @@
+[
+    {
+        "castTime" : 1000,
+        "baseIncome" : 1,
+        "buffedIncome" : 1,
+        "instanceCount" : 1,
+        "isManaged" : false,
+        "managerCost" : 50,
+        "businessName" : "Lemonade Stand",
+        "baseBusinessCost" : 1,
+        "progress" : 0,
+        "lastScored" : 0,
+        "lastStarted" : 0,
+        "isRunning" : false
+    },
+    {
+        "castTime" : 10000,
+        "baseIncome" : 10,
+        "buffedIncome" : 1,
+        "instanceCount" : 0,
+        "isManaged" : false,
+        "managerCost" : 5000,
+        "businessName" : "Carwash",
+        "baseBusinessCost" : 1000,
+        "progress" : 0,
+        "lastScored" : 0,
+        "lastStarted" : 0,
+        "isRunning" : false
+    },
+    {
+        "castTime" : 100000,
+        "baseIncome" : 1,
+        "buffedIncome" : 1,
+        "instanceCount" : 0,
+        "isManaged" : false,
+        "managerCost" : 50000,
+        "businessName" : "Theatre",
+        "baseBusinessCost" : 10000,
+        "progress" : 0,
+        "lastScored" : 0,
+        "lastStarted" : 0,
+        "isRunning" : false
+    },
+    {
+        "castTime" : 1000000,
+        "baseIncome" : 10000,
+        "buffedIncome" : 1,
+        "instanceCount" : 0,
+        "isManaged" : false,
+        "managerCost" : 500000,
+        "businessName" : "Izakaya",
+        "baseBusinessCost" : 1000000,
+        "progress" : 0,
+        "lastScored" : 0,
+        "lastStarted" : 0,
+        "isRunning" : false
+    }
+]

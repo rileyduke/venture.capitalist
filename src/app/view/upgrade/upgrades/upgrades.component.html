@@ -19,6 +19,8 @@
             (click)="business.purchaseUpgrade(player)">
             buy
             <span class="badge badge-light">${{business.upgradeCost()}}</span>
+             
+            <span class="badge badge-light" style="margin-left: 5px;">X{{business.buffedIncome}}</span>
           </button>
       </ul>
     </div>
