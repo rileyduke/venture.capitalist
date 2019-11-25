@@ -52,7 +52,6 @@ export class Business {
     } else {
       return 100 * ((now - this.lastStarted) / this.castTime)
     }
-
   }
 
   // cost of the next insance is a function of:

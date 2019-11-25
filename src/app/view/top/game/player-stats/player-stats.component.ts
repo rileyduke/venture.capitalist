@@ -7,6 +7,7 @@ import { Player } from 'src/app/model/player';
   styleUrls: ['./player-stats.component.css']
 })
 
+// simple display player component
 export class PlayerStatsComponent implements OnInit {
   @Input() player: Player;
   constructor() { }

@@ -3,10 +3,10 @@
 </div>
 <app-player-stats [player]=player></app-player-stats>
 
-<div *ngFor='let business of player.businesses'>
+<div class="row">
+<div class="col-lg" *ngFor='let business of player.businesses'>
 
-  <div class="col-3">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 100%;">
       <div class="card-body">
         <h5 class="card-title">{{business.businessName}}</h5>
         <p class="card-text">Increase profits of {{ business.businessName }} by 3X.</p>
@@ -19,10 +19,10 @@
             (click)="business.purchaseUpgrade(player)">
             buy
             <span class="badge badge-light">${{business.upgradeCost()}}</span>
-             
+
             <span class="badge badge-light" style="margin-left: 5px;">X{{business.buffedIncome}}</span>
           </button>
       </ul>
     </div>
-  </div>
+</div>
 </div>
