@@ -24,15 +24,14 @@ export class PlayerService {
       player = new Player([], tempPlayer.money, tempPlayer.playerName)
     } else {
       player = new Player(PlayerJson.businesses, PlayerJson.money, PlayerJson.playerName)
-      const person = prompt('Please enter your name', 'Riley')
+      const person = prompt('Enter player name', PlayerJson.playerName)
       player.playerName = person
     }
 
     // populate with businesses from localstorage or json
     this.businessService.populateBusinesses(player)
 
-    // TODO: seed from a json file or something
-    // set to mocked data
+    // set to mocked data if nothing comes to us.. not really that important
     if (!player) {
       player = PLAYER
     }
