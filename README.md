@@ -4,7 +4,11 @@ A clone of the Adventure Capitalist game (http://en.gameslol.net/adventure-capit
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Prerequisites
+
+To run the application you must have the following prerequisites:
+1. npm (https://www.npmjs.com/get-npm)
+2. angular CLI tools (https://cli.angular.io/ or `npm install -g @angular/cli`)
 
 ### Development server
 
