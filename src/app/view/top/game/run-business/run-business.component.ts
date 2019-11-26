@@ -5,6 +5,7 @@ import * as Feather from 'feather-icons';
 
 import { Observable, of, timer } from 'rxjs';
 import { Player } from 'src/app/model/player';
+import { HelperService } from 'src/app/helper/helper.service';
 
 @Component({
   selector: 'app-run-business',
@@ -27,10 +28,7 @@ export class RunBusinessComponent implements OnInit {
   // TODO: create this object only when first business is created
   private timerId: any
 
-  constructor() {
-    // this.business.progress = CONSTANTS.progressMin
-    // this.isRunning = false
-  }
+  constructor(private helperService: HelperService) { }
 
   ngOnInit() {
     if (this.business.isManaged || this.business.isRunning) {
@@ -77,23 +75,7 @@ export class RunBusinessComponent implements OnInit {
   initTimer(): void {
     // start counting down the castbar
     this.timerId = setInterval(() => {
-      if (this.business.isRunning) {
-        this.progressPercent = this.business.getPercentageDone() // 100 * (this.business.progress / CONSTANTS.progressMax)
-
-        if (this.progressPercent >= 100) {
-          this.progressPercent = 0
-
-          // if not managed, stop running
-          if (!this.business.isManaged) {
-            this.business.isRunning = false
-          }
-
-          // score business
-          // this.player.money += this.business.getIncome()
-          this.business.scoreBusiness(this.player)
-        }
-      }
-
+      this.helperService.runBusinessComponent(this)
     }, CONSTANTS.timerTick);
   }
 
