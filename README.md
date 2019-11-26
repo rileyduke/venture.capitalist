@@ -33,6 +33,10 @@ All data is stored in `LocalStorage` in the browser as JSON strings. Timestamps 
 - Anything is purchased (manager, business, upgrade)
 - Data is loaded from the seed JSON file
 
+#### LocalStorage
+
+Storing the businesses with timestamps as opposed to continually running the server allows the user to even make money when their computer is turned off. It also makes deploying or running the game headache free as the user only needs to have npm installed to run it.
+
 ### Seed Data
 
 Seed data is stored in the `src/static/json` folder. On the first run of the game, or any run where the data in the seed file does not exist in `LocalStorage`, seed data is retreived and stored in `LocalStorage`.
@@ -40,10 +44,6 @@ Seed data is stored in the `src/static/json` folder. On the first run of the gam
 ### Angular
 
 As this is a non-social game (as per scope), there was no reason to run the game code server side. I have used angular in the past so it was chosen out of familiarity to me.
-
-### LocalStorage
-
-Storing the businesses with timestamps as opposed to continually running the server allows the user to even make money when their computer is turned off. It also makes deploying or running the game headache free as the user only needs to have npm installed to run it.
 
 ### Bootstrap
 
