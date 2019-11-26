@@ -28,9 +28,7 @@
               "src/static/bootstrap/dist/css/bootstrap.min.css",
               "src/static/bootstrap/dashboard.css"
             ],
-            "scripts": [
-              "src/static/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
