@@ -7,7 +7,8 @@ export class Player {
     // total amount of money the player owns
     public money: number,
     // name of the player
-    public playerName: string) { }
+    public playerName: string
+  ) { }
 
   // calculate money scored while offline
   // only do so for managed businesses

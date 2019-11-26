@@ -18,7 +18,6 @@ export class AchievementsComponent implements OnInit {
 
   // run timer for the castbar
   // this ticks no matter what, even if the business isn't running
-  // TODO: create this object only when first business is created
   private timerId: any
 
   constructor(private playerService: PlayerService, private helperService: HelperService) { }
@@ -28,7 +27,7 @@ export class AchievementsComponent implements OnInit {
     this.getPlayer()
     this.initTimer()
   }
-  
+
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnDestroy() {
     if (this.timerId) {

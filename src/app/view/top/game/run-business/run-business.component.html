@@ -13,7 +13,7 @@
           <div *ngIf='business.getCastTime() > 250 || !business.isManaged'
             class="progress-bar bg-success notransition"
             role="progressbar"
-            [style.width]="(95*(progressPercent/100)) +'%'"
+            [style.width]="(95*(business.percentageDone/100)) +'%'"
             [hidden]="!business.isRunning"
             aria-valuemin="0"
             aria-valuemax="100"></div>

@@ -28,7 +28,10 @@ export class Business {
     // started time in milliseconds
     public lastStarted: number,
     // tracking if the business is currently being cast
-    public isRunning: boolean
+    public isRunning: boolean,
+
+    // for display
+    public percentageDone: number = 0
   ) { }
 
   // decision maker as to if you can use a business:
@@ -46,12 +49,19 @@ export class Business {
 
   // for progress bar display purpose
   public getPercentageDone(): number {
+
+    if (!this.isManaged && !this.isRunning) {
+      this.percentageDone = 0
+      return this.percentageDone
+    }
     const now = Date.now()
     if (this.isManaged) {
-      return 100 * ((now - this.lastScored) / this.getCastTime())
+      this.percentageDone = 100 * ((now - this.lastScored) / this.getCastTime())
     } else {
-      return 100 * ((now - this.lastStarted) / this.getCastTime())
+      this.percentageDone = 100 * ((now - this.lastStarted) / this.getCastTime())
     }
+
+    return this.percentageDone
   }
 
   // cost of the next insance is a function of:
@@ -68,7 +78,6 @@ export class Business {
 
     // store
     this.storeBusiness()
-    player.storePlayer()
   }
 
   // store in localstorage
