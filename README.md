@@ -24,6 +24,8 @@ The project scope was limited to the following functions:
 
 This clone focuses mainly on the front-end application, due to it being an angular application. Code is only run when an browser window is open and never run any other time (aside from the node server which only serves angular). Money made while idle is calculated based on the stored timestamps for each business when the window opens each time. Any partially run business will therefore pickup where it left off when the window is re-opened.
 
+## Architecture
+
 ### Storage
 
 All data is stored in `LocalStorage` in the browser as JSON strings. Timestamps are stored in millisecond time. `LocalStorage` data is refreshed when:
@@ -34,8 +36,6 @@ All data is stored in `LocalStorage` in the browser as JSON strings. Timestamps 
 ### Seed Data
 
 Seed data is stored in the `src/static/json` folder. On the first run of the game, or any run where the data in the seed file does not exist in `LocalStorage`, seed data is retreived and stored in `LocalStorage`.
-
-## Architecture
 
 ### Angular
 
